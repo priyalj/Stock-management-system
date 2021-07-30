@@ -1810,7 +1810,6 @@ my_cursor.execute(f"SELECT  p_category, Products.p_id, p_name, qavl, price, q_or
 for row in my_cursor:
 	count=len(my_tree_n.get_children())
 	
-	
 	if count%2==0:
 		my_tree_n.insert(parent='', index=count, iid=count, values=(row[0],row[1],row[2],row[3], row[4],row[5],row[6], row[7], row[8], row[9],row[10], row[11], row[12], row[13], row[14], row[15], row[16], row[17], row[18], row[19], row[20]), tags='evenrow')
 	else:
