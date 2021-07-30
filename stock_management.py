@@ -211,7 +211,7 @@ def display():
 				my_tree.delete(i)
 			if Product_id.get()=='':
 				a=Product_name.get()
-				my_cursor_display.execute(f"SELECT  p_category, Products.p_id, p_name, qavl, price, q_ordered, ddate, discount, tax, cost, amt_paid, pay_method, transaction_id, balance, duedate, s_name, Supplier.s_id, Orders.Order_id, s_contactno, s_emailid,status FROM Products, Orders, Supplier, Order_products, Supplier_products, SignUp_Data, User_access WHERE Products.p_id = Order_products.p_id AND Supplier_products.p_id = Products.p_id AND Orders.Order_id = Order_products.o_id AND Supplier.s_id=Orders.Supplier_id AND Supplier_products.s_id=Orders.Supplier_id AND Supplier_products.s_id=Supplier.s_id AND Supplier_products.p_id=Order_products.p_id AND Supplier_products.p_id=Order_products.p_id AND SignUp_Data.email=User_access.email_id AND  User_access.pcategory=Products.p_category AND User_access.email_id='{email_id_access}'AND WHERE p_name='a' AND status='delivered';")
+				my_cursor_display.execute(f"SELECT  p_category, Products.p_id, p_name, qavl, price, q_ordered, ddate, discount, tax, cost, amt_paid, pay_method, transaction_id, balance, duedate, s_name, Supplier.s_id, Orders.Order_id, s_contactno, s_emailid,status FROM Products, Orders, Supplier, Order_products, Supplier_products, SignUp_Data, User_access WHERE Products.p_id = Order_products.p_id AND Supplier_products.p_id = Products.p_id AND Orders.Order_id = Order_products.o_id AND Supplier.s_id=Orders.Supplier_id AND Supplier_products.s_id=Orders.Supplier_id AND Supplier_products.s_id=Supplier.s_id AND Supplier_products.p_id=Order_products.p_id AND Supplier_products.p_id=Order_products.p_id AND SignUp_Data.email=User_access.email_id AND  User_access.pcategory=Products.p_category AND User_access.email_id='{email_id_access}'AND p_name='a' AND status='delivered';")
 				#count=0
 				data_fields=my_cursor_display.fetchall()
 				numberrows=my_cursor_display.rowcount
@@ -251,7 +251,7 @@ def display():
 				
 			elif Product_name.get()=='':
 				a1=Product_id.get()
-				my_cursor_display.execute(f"SELECT  p_category, Products.p_id, p_name, qavl, price, q_ordered, ddate, discount, tax, cost, amt_paid, pay_method, transaction_id, balance, duedate, s_name, Supplier.s_id, Orders.Order_id, s_contactno, s_emailid,status FROM Products, Orders, Supplier, Order_products, Supplier_products, SignUp_Data, User_access WHERE Products.p_id = Order_products.p_id AND Supplier_products.p_id = Products.p_id AND Orders.Order_id = Order_products.o_id AND Supplier.s_id=Orders.Supplier_id AND Supplier_products.s_id=Orders.Supplier_id AND Supplier_products.s_id=Supplier.s_id AND Supplier_products.p_id=Order_products.p_id AND Supplier_products.p_id=Order_products.p_id AND SignUp_Data.email=User_access.email_id AND  User_access.pcategory=Products.p_category AND User_access.email_id='{email_id_access}'AND WHERE Products.p_id='{a1}' AND status='delivered';")
+				my_cursor_display.execute(f"SELECT  p_category, Products.p_id, p_name, qavl, price, q_ordered, ddate, discount, tax, cost, amt_paid, pay_method, transaction_id, balance, duedate, s_name, Supplier.s_id, Orders.Order_id, s_contactno, s_emailid,status FROM Products, Orders, Supplier, Order_products, Supplier_products, SignUp_Data, User_access WHERE Products.p_id = Order_products.p_id AND Supplier_products.p_id = Products.p_id AND Orders.Order_id = Order_products.o_id AND Supplier.s_id=Orders.Supplier_id AND Supplier_products.s_id=Orders.Supplier_id AND Supplier_products.s_id=Supplier.s_id AND Supplier_products.p_id=Order_products.p_id AND Supplier_products.p_id=Order_products.p_id AND SignUp_Data.email=User_access.email_id AND  User_access.pcategory=Products.p_category AND User_access.email_id='{email_id_access}'AND Products.p_id='{a1}' AND status='delivered';")
 				
 				data_fields=my_cursor_display.fetchall()
 				numberrows=my_cursor_display.rowcount
@@ -293,7 +293,7 @@ def display():
 			elif (Product_id.get()!='' and Product_name.get()!=''):
 				a=Product_name.get()
 				a1=Product_id.get()
-				my_cursor_display.execute(f"SELECT  p_category, Products.p_id, p_name, qavl, price, q_ordered, ddate, discount, tax, cost, amt_paid, pay_method, transaction_id, balance, duedate, s_name, Supplier.s_id, Orders.Order_id, s_contactno, s_emailid,status FROM Products, Orders, Supplier, Order_products, Supplier_products, SignUp_Data, User_access WHERE Products.p_id = Order_products.p_id AND Supplier_products.p_id = Products.p_id AND Orders.Order_id = Order_products.o_id AND Supplier.s_id=Orders.Supplier_id AND Supplier_products.s_id=Orders.Supplier_id AND Supplier_products.s_id=Supplier.s_id AND Supplier_products.p_id=Order_products.p_id AND Supplier_products.p_id=Order_products.p_id AND SignUp_Data.email=User_access.email_id AND  User_access.pcategory=Products.p_category AND User_access.email_id='{email_id_access}'AND WHERE p_name='{a}'and Products.p_id='{a1}' AND status='delivered';")
+				my_cursor_display.execute(f"SELECT  p_category, Products.p_id, p_name, qavl, price, q_ordered, ddate, discount, tax, cost, amt_paid, pay_method, transaction_id, balance, duedate, s_name, Supplier.s_id, Orders.Order_id, s_contactno, s_emailid,status FROM Products, Orders, Supplier, Order_products, Supplier_products, SignUp_Data, User_access WHERE Products.p_id = Order_products.p_id AND Supplier_products.p_id = Products.p_id AND Orders.Order_id = Order_products.o_id AND Supplier.s_id=Orders.Supplier_id AND Supplier_products.s_id=Orders.Supplier_id AND Supplier_products.s_id=Supplier.s_id AND Supplier_products.p_id=Order_products.p_id AND Supplier_products.p_id=Order_products.p_id AND SignUp_Data.email=User_access.email_id AND  User_access.pcategory=Products.p_category AND User_access.email_id='{email_id_access}'AND p_name='{a}'and Products.p_id='{a1}' AND status='delivered';")
 				#count=0
 				data_fields=my_cursor_display.fetchall()
 				numberrows=my_cursor_display.rowcount
@@ -582,13 +582,10 @@ def insertdata_n():
 			
 			my_cursor_insertn.execute(f"INSERT INTO Orders values('{i1_2}','{v}','{u}',{f}, {p}, '{o}', {q}, '{g}', '{r}', {l},{k}, '{x}');")
 			mydb.commit()
-			print(f"supplier ID v: {v}")
 			my_cursor_insertn.execute(f"SELECT * FROM Supplier WHERE s_id='{v}';")
 			data_s_id_n=my_cursor_insertn.fetchall()
 			rownumbers2 = my_cursor_insertn.rowcount
-			print(rownumbers2)
 			if rownumbers2<= 0:
-				print(f"INSERT INTO Supplier values('{v}','{t}','{m}', '{n}');")
 				my_cursor_insertn.execute(f"INSERT INTO Supplier values('{v}','{t}','{m}', '{n}');")
 				mydb.commit()
 			my_cursor_insertn.execute(f"INSERT INTO Order_products values('{b}', '{i1_2}', {s});")
@@ -625,7 +622,7 @@ def display_n():
 				my_tree_n.delete(i)
 			if Product_id_n.get()=='':
 				a=Product_name_n.get()
-				my_cursor_displayn.execute(f"SELECT  p_category, Products.p_id, p_name, qavl, price, q_ordered, ddate, discount, tax, cost, amt_paid, pay_method, transaction_id, balance, duedate, s_name, Supplier.s_id, Orders.Order_id, s_contactno, s_emailid,status FROM Products, Orders, Supplier, Order_products, Supplier_products, SignUp_Data, User_access WHERE Products.p_id = Order_products.p_id AND Supplier_products.p_id = Products.p_id AND Orders.Order_id = Order_products.o_id AND Supplier.s_id=Orders.Supplier_id AND Supplier_products.s_id=Orders.Supplier_id AND Supplier_products.s_id=Supplier.s_id AND Supplier_products.p_id=Order_products.p_id AND Supplier_products.p_id=Order_products.p_id AND SignUp_Data.email=User_access.email_id AND  User_access.pcategory=Products.p_category AND User_access.email_id='{email_id_access}' AND WHERE p_name='a' AND status<>'delivered';")
+				my_cursor_displayn.execute(f"SELECT  p_category, Products.p_id, p_name, qavl, price, q_ordered, ddate, discount, tax, cost, amt_paid, pay_method, transaction_id, balance, duedate, s_name, Supplier.s_id, Orders.Order_id, s_contactno, s_emailid,status FROM Products, Orders, Supplier, Order_products, Supplier_products, SignUp_Data, User_access WHERE Products.p_id = Order_products.p_id AND Supplier_products.p_id = Products.p_id AND Orders.Order_id = Order_products.o_id AND Supplier.s_id=Orders.Supplier_id AND Supplier_products.s_id=Orders.Supplier_id AND Supplier_products.s_id=Supplier.s_id AND Supplier_products.p_id=Order_products.p_id AND Supplier_products.p_id=Order_products.p_id AND SignUp_Data.email=User_access.email_id AND  User_access.pcategory=Products.p_category AND User_access.email_id='{email_id_access}' AND p_name='a' AND status<>'delivered';")
 				data_fields=my_cursor_displayn.fetchall()
 				numberrows_n=my_cursor_displayn.rowcount
 				if numberrows_n<=0:
@@ -665,7 +662,7 @@ def display_n():
 				
 			elif Product_name_n.get()=='':
 				a1=Product_id_n.get()
-				my_cursor_displayn.execute(f"SELECT  p_category, Products.p_id, p_name, qavl, price, q_ordered, ddate, discount, tax, cost, amt_paid, pay_method, transaction_id, balance, duedate, s_name, Supplier.s_id, Orders.Order_id, s_contactno, s_emailid,status FROM Products, Orders, Supplier, Order_products, Supplier_products, SignUp_Data, User_access WHERE Products.p_id = Order_products.p_id AND Supplier_products.p_id = Products.p_id AND Orders.Order_id = Order_products.o_id AND Supplier.s_id=Orders.Supplier_id AND Supplier_products.s_id=Orders.Supplier_id AND Supplier_products.s_id=Supplier.s_id AND Supplier_products.p_id=Order_products.p_id AND Supplier_products.p_id=Order_products.p_id AND SignUp_Data.email=User_access.email_id AND  User_access.pcategory=Products.p_category AND User_access.email_id='{email_id_access}' AND WHERE Products.p_id='{a1}' AND status<>'delivered';")
+				my_cursor_displayn.execute(f"SELECT  p_category, Products.p_id, p_name, qavl, price, q_ordered, ddate, discount, tax, cost, amt_paid, pay_method, transaction_id, balance, duedate, s_name, Supplier.s_id, Orders.Order_id, s_contactno, s_emailid,status FROM Products, Orders, Supplier, Order_products, Supplier_products, SignUp_Data, User_access WHERE Products.p_id = Order_products.p_id AND Supplier_products.p_id = Products.p_id AND Orders.Order_id = Order_products.o_id AND Supplier.s_id=Orders.Supplier_id AND Supplier_products.s_id=Orders.Supplier_id AND Supplier_products.s_id=Supplier.s_id AND Supplier_products.p_id=Order_products.p_id AND Supplier_products.p_id=Order_products.p_id AND SignUp_Data.email=User_access.email_id AND  User_access.pcategory=Products.p_category AND User_access.email_id='{email_id_access}' AND Products.p_id='{a1}' AND status<>'delivered';")
 				#count=0
 				data_fields=my_cursor_displayn.fetchall()
 				numberrows_n=my_cursor_displayn.rowcount
@@ -707,7 +704,7 @@ def display_n():
 			elif (Product_id_n.get()!='' and Product_name_n.get()!=''):
 				a=Product_name_n.get()
 				a1=Product_id_n.get()
-				my_cursor_displayn.execute(f"SELECT  p_category, Products.p_id, p_name, qavl, price, q_ordered, ddate, discount, tax, cost, amt_paid, pay_method, transaction_id, balance, duedate, s_name, Supplier.s_id, Orders.Order_id, s_contactno, s_emailid,status FROM Products, Orders, Supplier, Order_products, Supplier_products, SignUp_Data, User_access WHERE Products.p_id = Order_products.p_id AND Supplier_products.p_id = Products.p_id AND Orders.Order_id = Order_products.o_id AND Supplier.s_id=Orders.Supplier_id AND Supplier_products.s_id=Orders.Supplier_id AND Supplier_products.s_id=Supplier.s_id AND Supplier_products.p_id=Order_products.p_id AND Supplier_products.p_id=Order_products.p_id AND SignUp_Data.email=User_access.email_id AND  User_access.pcategory=Products.p_category AND User_access.email_id='{email_id_access}' AND WHERE p_name='{a}'and Products.p_id='{a1}' AND status<>'delivered';")
+				my_cursor_displayn.execute(f"SELECT  p_category, Products.p_id, p_name, qavl, price, q_ordered, ddate, discount, tax, cost, amt_paid, pay_method, transaction_id, balance, duedate, s_name, Supplier.s_id, Orders.Order_id, s_contactno, s_emailid,status FROM Products, Orders, Supplier, Order_products, Supplier_products, SignUp_Data, User_access WHERE Products.p_id = Order_products.p_id AND Supplier_products.p_id = Products.p_id AND Orders.Order_id = Order_products.o_id AND Supplier.s_id=Orders.Supplier_id AND Supplier_products.s_id=Orders.Supplier_id AND Supplier_products.s_id=Supplier.s_id AND Supplier_products.p_id=Order_products.p_id AND Supplier_products.p_id=Order_products.p_id AND SignUp_Data.email=User_access.email_id AND  User_access.pcategory=Products.p_category AND User_access.email_id='{email_id_access}' AND p_name='{a}'and Products.p_id='{a1}' AND status<>'delivered';")
 				#count=0
 				data_fields=my_cursor_displayn.fetchall()
 				numberrows_n=my_cursor_displayn.rowcount
