@@ -1808,7 +1808,9 @@ my_tree_n.tag_configure('evenrow',background="white")
 
 my_cursor.execute(f"SELECT  p_category, Products.p_id, p_name, qavl, price, q_ordered, ddate, discount, tax, cost, amt_paid, pay_method, transaction_id, balance, duedate, s_name, Supplier.s_id, Orders.Order_id, s_contactno, s_emailid,status FROM Products, Orders, Supplier, Order_products, Supplier_products, SignUp_Data, User_access WHERE Products.p_id = Order_products.p_id AND Supplier_products.p_id = Products.p_id AND Orders.Order_id = Order_products.o_id AND Supplier.s_id=Orders.Supplier_id AND Supplier_products.s_id=Orders.Supplier_id AND Supplier_products.s_id=Supplier.s_id AND Supplier_products.p_id=Order_products.p_id AND Supplier_products.p_id=Order_products.p_id AND  SignUp_Data.email=User_access.email_id AND  User_access.pcategory=Products.p_category AND User_access.email_id='{email_id_access}' AND status<>'delivered';")
 for row in my_cursor:
-	count=len(my_tree_n.get_children())		
+	count=len(my_tree_n.get_children())
+	
+	
 	if count%2==0:
 		my_tree_n.insert(parent='', index=count, iid=count, values=(row[0],row[1],row[2],row[3], row[4],row[5],row[6], row[7], row[8], row[9],row[10], row[11], row[12], row[13], row[14], row[15], row[16], row[17], row[18], row[19], row[20]), tags='evenrow')
 	else:
