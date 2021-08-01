@@ -15,6 +15,33 @@ w=root.winfo_screenwidth()
 h=root.winfo_screenheight()
 root.geometry(f"{w}x{h}+0+0")
 root.title("Stock management system")
+
+#SQL Queries: Creating a database in MySQL RDBMS
+#CREATE DATABASE Stockmanagement;
+
+#SQL Queries: Creating TABLES in the database "Stockmanagement"
+#Products
+#Create Products(p_id varchar(50) PRIMARY KEY, p_name varchar(100), p_category varchar(50), price int NOT NULL, qavl int);
+
+#Orders
+#Create Orders(Order_id varchar(30) PRIMARY KEY, Supplier_id varchar(20), ddate date NOT NULL, cost int, amt_paid int, pay_method varchar(20), balance int, duedate date, transaction_id varchar(20), tax int, discount int, status varchar(20), CONSTRAINT FK_SuppId FOREIGN KEY (Supplier_id) REFERENCES Supplier(s_id));
+
+#Supplier
+#Create Supplier(s_id varchar(20) PRIMARY KEY, s_name varchar(100), s_contactno varchar(15) UNIQUE, s_emailid varchar(50) UNIQUE);
+
+#Order_products
+#Create Order_products(p_id varchar(50), o_id varchar(30) UNIQUE, q_ordered int, CONSTRAINT FK_p_id FOREIGN KEY (p_id) REFERENCES Products(p_id));
+
+#Supplier_products
+#Create Supplier_products(p_id varchar(50), s_id varchar(20), CONSTRAINT FK_p_id1 FOREIGN KEY (p_id) REFERENCES Products(p_id), CONSTRAINT FK_supp_id FOREIGN KEY (s_id) REFERENCES Supplier(s_id));
+
+#SignUp_Data
+#Create SignUp_Data(fname varchar(50) NOT NULL, lname varchar(50) NOT NULL, email varchar(50) PRIMARY KEY, mobile_no varchar(10) UNIQUE NOT NULL, sq varchar(100) NOT NULL, sans varchar(100) NOT NULL, password varchar(100) NOT NULL, cpassword varchar(100) NOT NULL);
+
+
+#User_access
+#Create User_access(email_id varchar(50) NOT NULL, pcategory varchar(50),CONSTRAINT FK_email_id FOREIGN KEY (email_id) REFERENCES SignUp_Data(email));
+
 #mydatabase
 mydb=mysql.connector.connect(host='localhost',user='root', passwd='123adega', database='Stockmanagement')
 #Create Cursor Instance
